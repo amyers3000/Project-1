@@ -1,14 +1,21 @@
-//
-//  main.cpp
-//  Project-Exam-1
-//
-//  Created by Alex Myers on 2/26/24.
-//
-
 #include <iostream>
+#include "trie.hpp"
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+
+int main() {
+    char flag;
+    Trie* newTrie = new Trie();
+
+    newTrie->insertFile("Dictionary.txt");
+    do {
+        newTrie->searchConsoleInput();
+
+        std::cout << "Continue (y/n)? ";
+        std::cin >> flag;
+    } while (flag == 'y');
+
+    delete newTrie;
+
     return 0;
 }
+
